@@ -239,6 +239,11 @@ section { padding: 100px 8%; position: relative; }
 }
 
 /* === Projects === */
+.projects-grid {
+  display: grid;
+  gap: 26px;
+}
+
 .project-card {
   background: var(--card);
   border-radius: 22px;
