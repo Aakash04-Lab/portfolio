@@ -47,7 +47,7 @@ export default function Projects() {
         {projects.map((project) => (
           <div className="project-card" key={project.title}>
             <div className="project-image">
-              <div>{project.visual}</div>
+              <img src="/profile.jpg.png" alt={project.title} />
             </div>
             <div className="project-body">
               <span className="project-tag">{project.tag}</span>
