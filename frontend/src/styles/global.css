@@ -37,6 +37,7 @@ section { padding: 100px 8%; position: relative; }
 }
 .section-title span {
   background: var(--gradient);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -97,7 +98,7 @@ section { padding: 100px 8%; position: relative; }
   z-index: 100;
 }
 .logo { font-weight:800; font-size: 22px; font-family:'Space Grotesk'; }
-.logo span { background: var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.logo span { background: var(--gradient); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .nav-links { display: flex; gap: 30px; list-style:none; }
 .nav-links a { color: var(--muted); font-weight: 500; transition: color .3s; position:relative; }
 .nav-links a:hover { color: var(--text); }
@@ -134,7 +135,9 @@ section { padding: 100px 8%; position: relative; }
 }
 .hero h1 .grad {
   background: var(--gradient);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .hero p { color: var(--muted); font-size: 17px; margin-bottom: 30px; max-width: 560px; }
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -200,7 +203,7 @@ section { padding: 100px 8%; position: relative; }
   border-color: var(--accent);
   box-shadow: var(--shadow);
 }
-.stat h3 { font-size: 32px; background: var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.stat h3 { font-size: 32px; background: var(--gradient); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .stat p { color: var(--muted); font-size: 14px; margin-top:4px;}
 
 /* === Skills === */
@@ -260,21 +263,25 @@ section { padding: 100px 8%; position: relative; }
 .project-image {
   background: linear-gradient(135deg,#050505 0%,#4a4a4a 100%);
   min-height: 320px;
-  display:grid; place-items:center;
-  color:#ffffff; font-size: 22px; font-weight:700;
-  padding: 0; text-align:center;
-  position:relative; overflow:hidden;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: block;
 }
 .project-image img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  min-height: 320px;
   object-fit: cover;
+  object-position: center;
   display: block;
+  min-width: 100%;
 }
 .project-image::after {
   content:""; position:absolute; inset:0;
   background: radial-gradient(circle at 30% 30%, rgba(0,0,0,0.25), transparent 50%);
+  pointer-events: none;
 }
 .project-body { padding: 36px; }
 .project-tag {
@@ -406,6 +413,6 @@ section { padding: 100px 8%; position: relative; }
   .hero-cta, .hero-socials { justify-content: center;}
   .avatar { width: 220px; height: 220px; font-size: 90px;}
   .about-grid, .project-card, .contact-wrap { grid-template-columns: 1fr; }
-  .project-image { min-height: 180px;}
+  .project-image { height: 180px; min-height: 0;}
   section { padding: 70px 6%;}
 }

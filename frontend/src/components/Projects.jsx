@@ -3,6 +3,7 @@ import { FiExternalLink, FiArrowRight } from "react-icons/fi";
 const projects = [
   {
     visual: "Healthcare",
+    image: "/download.jpg",
     tag: "Live Client Project",
     title: "Sports Injury Center - Healthcare Web App",
     description:
@@ -19,6 +20,7 @@ const projects = [
   },
   {
     visual: "File Tools",
+    image: "/Tool.png",
     tag: "Full Stack Project",
     title: "Tools Convertor - All-in-One File Tools Platform",
     description:
@@ -47,7 +49,7 @@ export default function Projects() {
         {projects.map((project) => (
           <div className="project-card" key={project.title}>
             <div className="project-image">
-              <img src="/profile.jpg.png" alt={project.title} />
+              <img src={project.image} alt={project.title} />
             </div>
             <div className="project-body">
               <span className="project-tag">{project.tag}</span>
